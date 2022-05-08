@@ -45,5 +45,11 @@ image_fn, text_fn, clip_params, preprocess = clip_jax.load('ViT-B/32')
 vit32 = Perceptor(image_fn, text_fn, clip_params, preprocess)
 image_fn, text_fn, clip_params, preprocess = clip_jax.load('ViT-B/16')
 vit16 = Perceptor(image_fn, text_fn, clip_params, preprocess)
-image_fn, text_fn, clip_params, preprocess = clip_jax.load('ViT-L/14')
-vitl14 = Perceptor(image_fn, text_fn, clip_params, preprocess)
+def get_vitl14():
+    image_fn, text_fn, clip_params, preprocess = clip_jax.load('ViT-L/14')
+    vitl14 = Perceptor(image_fn, text_fn, clip_params, preprocess)
+    return vitl14
+def get_vitl14_336px():
+    image_fn, text_fn, clip_params, preprocess = clip_jax.load('ViT-L/14@336px')
+    vitl14_336px = Perceptor(image_fn, text_fn, clip_params, preprocess)
+    return vitl14_336px 
